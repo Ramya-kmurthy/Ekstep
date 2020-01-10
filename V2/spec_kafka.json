@@ -1,0 +1,81 @@
+{
+  "type": "kafka",
+  "dataSchema": {
+    "dataSource": "PISA_DATA",
+    "parser": {
+      "type": "string",
+      "parseSpec": {
+        "format": "json",
+        "timestampSpec": {
+          "column": "time",
+          "format": "auto"
+        },
+        "dimensionsSpec": {
+          "dimensions": [
+            "std_no", 
+            "slno",
+            "schcd",
+            "class",
+            "se_x",
+            "cwsn",
+            "cwsn_type",
+            "dob",
+            "med_ium", 
+            "mgt",
+            "admision_id",
+            "stnm",
+            "dstnm",
+            "mgt_nm", 
+            "medm",
+            "year_ag",
+            "month_ag",
+            "days_ag",
+            "schnm",
+            "board",
+            "affil_no",
+            "sch_head",  
+            "desig",
+            "mob",
+            "sch_f_name",
+            "sch_add1",
+            "sch_add2",
+            "sch_add3", 
+            "rur_urb",
+            "Management - Breakdown",
+            "School Name",
+            "Type",
+            "Cluster",  
+            "head_teacher",
+            "mobile_teacher",
+            "email",
+            "lclass",
+            "hclass",
+            "Management",  
+            "sch_type",
+            "percentage_computation"
+          ]
+        }
+      }
+    },
+    "metricsSpec" : [],
+    "granularitySpec": {
+      "type": "uniform",
+      "segmentGranularity": "DAY",
+      "queryGranularity": "NONE",
+      "rollup": false
+    }
+  },
+  "tuningConfig": {
+    "type": "kafka",
+    "reportParseExceptions": false
+  },
+  "ioConfig": {
+    "topic": "Demo_kafka",
+    "replicas": 1,
+    "taskDuration": "PT5M",
+    "consumerProperties": {
+      "bootstrap.servers": "localhost:9092"
+    },
+ "appendToExisting" : true
+  }
+}
